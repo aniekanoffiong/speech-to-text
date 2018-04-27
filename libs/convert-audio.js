@@ -3,7 +3,7 @@ const fs = require('fs'),
     crypto = require('crypto'),
     ffmpeg = require('fluent-ffmpeg');
 
-const output = '../audio/' + crypto.randomBytes(20).toString('hex') + '.flac';
+const output = './audio/' + crypto.randomBytes(20).toString('hex') + '.flac';
 
 module.exports = file => new Promise((resolve, reject) => {
     if (!fs.existsSync(file)) {
