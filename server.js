@@ -27,7 +27,7 @@ app.use(function (req, res, next) {
 
 // Routes
 app.use('/api', require('./routes/'));
-app.use('*', function (req, res) {
+app.use('*', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 

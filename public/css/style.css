@@ -1,6 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+}
 .content {
+    width: 80%;
     margin: 30px auto;
     display: block;
-    width: 80%;
     text-align: center;
+}
+label, .form-button {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.form-button {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 14px;
+    border: transparent;
+    background-color: #bababa;
+    color: #fff;
+}
+.file-content {
+    border: 1px solid #adadad;
+    text-align: left;
+    padding: 20px;
+    width: 60%;
+    margin: 25px auto;
+    display: none;
+}
+.loading {
+    display: none;
+    background-color: rgba(0,0,0,0.25);
+    position: fixed;
+    text-align: center;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.loading .overlay {
+    position: relative;
+    top: 35%;
+    height: 20%;
+    top: 40%;
+    width: 30%;
+    left: 35%;
+    background-color: #fff;
+    color: #888888;
+    font-size: 18px;
+}
+.overlay div {
+    position: relative;
+    top: 25%;
 }
