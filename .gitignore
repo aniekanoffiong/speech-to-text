@@ -1,3 +1,5 @@
 /config/*
 !/config/index.js
+!/config/aws-credentials.dummy.js
+!/config/service-account-file.dummy.js
 /node_modules/*
