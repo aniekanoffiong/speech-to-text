@@ -14,10 +14,6 @@ module.exports = params => new Promise((resolve, reject) => {
         countdown.start();
     
         Promise.resolve(params)
-            .then(paths => {
-                // Converting audio file to .flac format 
-                return convert_audio(paths);
-            })
             .then(wavFile => {
                 // Storing on Zgoogle Cloud Storage
                 countdown.message(`Storing ${path.basename(wavFile)}...`);

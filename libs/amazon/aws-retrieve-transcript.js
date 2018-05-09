@@ -4,9 +4,10 @@ const credentials = require('../../config/aws-credentials');
 const transcribe = new Transcribe(credentials);
 
 module.exports = transcript => new Promise((resolve, reject) => {
+    const transcription = (typeof transcript === 'string' || transcript instanceof String)
+        ? transcript : transcript.TranscriptionJob.TranscriptionJobName;
     const params = {
-        // TranscriptionJobName: transcript,
-        TranscriptionJobName: transcript.TranscriptionJob.TranscriptionJobName,
+        TranscriptionJobName: transcription,
     };
 
     transcribe.getTranscriptionJob(params, function (err, data) {
@@ -15,7 +16,6 @@ module.exports = transcript => new Promise((resolve, reject) => {
             reject(err);
         }
         else {
-            console.log(data);
             resolve(data);
         }
     });
