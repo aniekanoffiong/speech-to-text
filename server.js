@@ -25,6 +25,15 @@ app.use(function (req, res, next) {
     next();
 });
 
+// Create audio/ and upload/ folders incase they don't already exist
+// This is for the heroku platform with its ephemeral filesystem
+try {
+    fs.existsSync("./audio") || fs.mkdirSync("./audio");
+    fs.existsSync("./upload") || fs.mkdirSync("./upload");
+} catch (err) {
+    console.log(err);
+}
+
 // Routes
 app.use('/api', require('./routes/'));
 app.use('*', (req, res) => {
