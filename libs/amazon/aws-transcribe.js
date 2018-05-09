@@ -11,6 +11,7 @@ module.exports = fileName => new Promise((resolve, reject) => {
             MediaFileUri: "https://s3-eu-west-1.amazonaws.com/speech-to-text-files/"
             + fileName,
         },
+        MediaSampleRateHertz: 16000,
         MediaFormat: "flac",
         TranscriptionJobName: crypto.randomBytes(20).toString('hex'),
     };
@@ -21,7 +22,6 @@ module.exports = fileName => new Promise((resolve, reject) => {
             reject(err);
         }
         else {
-            console.log(data);
             resolve(data);
         }
     });

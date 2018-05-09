@@ -11,16 +11,24 @@ module.exports = file => new Promise((resolve, reject) => {
     }
     if (mime.getType(file).indexOf('audio') > -1) {
         try {
-            ffmpeg(file)
-                .audioFrequency(16000)
-                .audioChannels(1)
-                .audioBitrate(320)
-                .toFormat('flac')
-                .save(output)
-                .on('end', () => {
-                    console.log('Completed audio conversion ...');
-                    resolve(output)
-                });
+            ffmpeg.ffprobe(file, (err, metadata) => {
+                const duration = metadata.format.duration / 60;
+
+                ffmpeg(file)
+                    .audioFrequency(16000)
+                    .audioChannels(1)
+                    .audioBitrate(320)
+                    .toFormat('flac')
+                    .save(output)
+                    .on('end', () => {
+                        console.log('Completed audio conversion ...');
+                        const data = new Array();
+                        data.push(output);
+                        data.push(duration);
+                        resolve(data)
+                    });
+            });
+
         } catch (err) {
             console.log(err);
             reject('Unable to Convert File');
