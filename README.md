@@ -19,10 +19,6 @@ This is an implementation of the Audio to Text Conversion using Google Cloud Spe
 * Start the development server by running command: `node server`
 * Visit `localhost:3000` in the browser to view and test app.
 
-## TO-DO
-
-* Complete implementation for AWS Transcribe API
-
 ## LICENSE
 
 MIT
