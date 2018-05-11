@@ -1,6 +1,6 @@
 # AUDIO TO TEXT CONVERTER
 
-This is an implementation of the Audio to Text Conversion using Google Cloud Speech To Text API.
+This is an implementation of the Audio to Text Conversion using Google Cloud Speech To Text API and Amazon Transcribe API. Due to the limitation of audio length with Google Speech To Text API, the app uses Amazon Transcribe API for adio length greater than 1 minute, while audio less than 1 minute is processed using the Google API.
 
 ## INSTALLATION
 
