@@ -62,7 +62,7 @@ function getTranscript(data, timeout, jobName) {
                     display(transcript);
                 });
             } else {
-                handleAction(data, 30000);
+                handleAction(data, 30000, jobName);
             }
         });
     }, timeout);
