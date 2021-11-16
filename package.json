@@ -25,7 +25,7 @@
   "dependencies": {
     "@google-cloud/speech": "^1.4.0",
     "@google-cloud/storage": "^1.6.0",
-    "aws-sdk": "^2.228.1",
+    "aws-sdk": "^2.814.0",
     "body-parser": "^1.18.2",
     "chalk": "^2.4.0",
     "clui": "^0.3.6",
